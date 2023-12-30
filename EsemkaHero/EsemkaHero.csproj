@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{058E5893-D0A7-48E2-882C-171A64E29D12}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EsemkaHero</RootNamespace>
+    <AssemblyName>EsemkaHero</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts.cs" />
+    <Compile Include="Clan.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Element.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FightHistory.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FightHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FightHistoryForm.Designer.cs">
+      <DependentUpon>FightHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hero.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HeroSkill.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterClan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterClan.Designer.cs">
+      <DependentUpon>MasterClan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterElement.Designer.cs">
+      <DependentUpon>MasterElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterHero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterHero.Designer.cs">
+      <DependentUpon>MasterHero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterHeroSkill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterHeroSkill.Designer.cs">
+      <DependentUpon>MasterHeroSkill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterSkills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterSkills.Designer.cs">
+      <DependentUpon>MasterSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransaksiFightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaksiFightForm.Designer.cs">
+      <DependentUpon>TransaksiFightForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FightHistoryForm.resx">
+      <DependentUpon>FightHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterClan.resx">
+      <DependentUpon>MasterClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterElement.resx">
+      <DependentUpon>MasterElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterHero.resx">
+      <DependentUpon>MasterHero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterHeroSkill.resx">
+      <DependentUpon>MasterHeroSkill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterSkills.resx">
+      <DependentUpon>MasterSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TransaksiFightForm.resx">
+      <DependentUpon>TransaksiFightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database.edmx.diagram">
+      <DependentUpon>Database.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppContext.datasource" />
+    <None Include="Properties\DataSources\Clan.datasource" />
+    <None Include="Properties\DataSources\Element.datasource" />
+    <None Include="Properties\DataSources\EsemkaHero.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\EsemkaHero.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\EsemkaHeroEntities.datasource" />
+    <None Include="Properties\DataSources\FightHistory.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Hero.datasource" />
+    <None Include="Properties\DataSources\HeroSkill.datasource" />
+    <None Include="Properties\DataSources\MainForm.datasource" />
+    <None Include="Properties\DataSources\MasterClan.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Skill.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database.Context.cs</LastGenOutput>
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Content>
+    <Content Include="Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
